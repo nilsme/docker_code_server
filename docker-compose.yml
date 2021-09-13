@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+
+  codeserver:
+    build:
+      context: ./code-server/
+      args:
+        - MINICONDA_VERSION=${MINICONDA_VERSION}
+        - MD5=${MD5}
+        - CS_VERSION=${CS_VERSION}
+        - DOCKER_USER=${DOCKER_USER}
+    image: code_server_app
+    container_name: code_server_app
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    environment:
+      - DOCKER_USER=$USER
+    ports:
+      - 127.0.0.1:8080:8080
+    volumes:
+      - $HOME:/home/$USER
+      - code-server:/home/coder
+
+volumes:
+  code-server:
