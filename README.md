@@ -1,6 +1,6 @@
 # README
 
-Using `code-server` with docker build from Fedora for local use.
+Build and deploy `code-server` for local use with Fedora 34 as OS.
 
 ## Build images
 
@@ -16,7 +16,7 @@ docker-compose up -d
 
 ## Access code-server
 
-Browse to <http://127.0.0.1:8080>
+Browse to <https://127.0.0.1:8080> or <https://localhost:8080>
 
 ## Stop code-server
 

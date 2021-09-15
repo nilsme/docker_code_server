@@ -32,9 +32,15 @@ RUN curl -fL https://repo.continuum.io/miniconda/Miniconda3-${MINICONDA_VERSION}
     /opt/conda/bin/conda install --yes -c conda-forge \
     pandas
 
+# install R
+# TODO:
+
 # install code-server
 RUN curl -fL https://github.com/cdr/code-server/releases/download/v${CS_VERSION}/code-server-${CS_VERSION}-amd64.rpm -o /tmp/code-server.rpm && \
     rpm -i /tmp/code-server.rpm
+
+# install code-server extensions
+# TODO:
 
 ### config taken from official dockerfile
 # configure user
@@ -49,6 +55,6 @@ RUN /opt/conda/bin/conda init
 # expose standard port
 EXPOSE 8080
 
-WORKDIR /home
+WORKDIR /home/coder
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]

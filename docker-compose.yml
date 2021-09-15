@@ -16,11 +16,12 @@ services:
     stdin_open: true
     tty: true
     environment:
-      - DOCKER_USER=$USER
+      - DOCKER_USER=${USER}
+      - CODE_SERVER_OPTIONS=${CODE_SERVER_OPTIONS}
     ports:
       - 127.0.0.1:8080:8080
     volumes:
-      - $HOME:/home/$USER
+      - ${HOME}:/home/${USER}
       - code-server:/home/coder
 
 volumes:

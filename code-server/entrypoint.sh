@@ -14,4 +14,4 @@ if [ "${DOCKER_USER-}" ]; then
   fi
 fi
 
-/usr/bin/code-server --disable-telemetry --bind-addr 0.0.0.0:8080 --auth none
+/usr/bin/code-server ${CODE_SERVER_OPTIONS}
